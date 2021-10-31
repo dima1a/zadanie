@@ -1,3 +1,4 @@
+
 const myData = [
     {
         "img":"http:\/\/lorempixel.com\/400\/800\/",
@@ -59,20 +60,36 @@ const myData = [
         "desc":"Suspendisse fermentum libero sed lorem pellentesque, eget rhoncus ligula placerat.",
         "price":"\u20ac169.00"
      }
-  ]
+]
+
+const createCard = ({ desc, img, price }) => `
+   <li class="cards__item">
+      <div class="cards__image">
+         <img src="${img}" class="cards__img">
+         <button class="cards__bth" onclick='console.log("${desc}")'>ADD TO CART</button>
+      </div>
+      <p class="cards__price">${price}</p>
+   </li>
+`;
   
-  const createCard = ({ img, price }) => `
-    <div class="cards__item" onclick="#';">
-        <div class="cards__image">
-            <img src="${img}">
-        </div>
-        <p class="cards__price">${price}</p>
-    </div>
-  `;
+function render() {
+   const cards = myData.map(createCard).join('')
+   document.querySelector('#produkt').innerHTML = cards
+
+}
   
-  function render() {
-    const cards = myData.map(createCard).join('')
-    document.querySelector('#produkt').innerHTML = cards
-  }
-  
-  render ();
+render ();
+
+jQuery(function ($) {
+   var $btn = $('.cards__bth');
+   $(".cards__img").mouseenter(function () {
+      $('.cards__bth').hide();
+      $(this).next('.cards__bth').show();
+   });
+   $(".cards__bth").mouseenter(function () {
+      $(this).show();
+   });
+   $(".cards__img").mouseleave(function () {
+      $btn.hide();
+   });
+});

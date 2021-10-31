@@ -36,11 +36,12 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
     font-family: 'Open Sans', sans-serif;
+    background-color: #FFFFFF;
 }
 
 .cards {
     width: 100%;
-    margin: 0 auto;
+    margin: 25px auto;
 
     &__container {
         max-width: 1200px;
@@ -53,37 +54,71 @@ body {
     
     &__item {
         width: 22%;
-        margin: 10px;
-        border: 1px solid black;
+        padding: 15px 10px;
 
-        @media only screen and (max-width: 922px) {
+        @media only screen and (max-width: 992px) {
             width: 30%;
         }
 
         @media only screen and (max-width: 768px) {
-            width: 45%;
+            width: 42%;
         }
 
         @media only screen and (max-width: 480px) {
-            width: 70%;
+            max-width: 266px;
+            width: 100%;
+            padding: 15px 10px;
         }
     }
 
     &__image {
         width: 100%;
         height: 344px;
+        box-shadow: 5px 3px 10px 1px rgba(0, 0, 0, .5);
+        position:relative;
         margin: 0 auto;
+    }
 
-        img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
+    &__img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__bth {
+        display: none;
+        padding: 5px; 
+        background-color: #FFFFFF;
+        max-width: 130px;
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: 16px;
+        font-weight: 500;
+        color: #666666;
+
     }
 
     &__price {
-        font-weight: 400;
-        font-size: 10px;
-    }
+        font-weight: 500;
+        font-size: 16px;
+        padding-top: 15px;
+        padding-right: 3px;
+        text-align: right;
+        color: #666666;
 
+        @media only screen and (max-width: 992px) {
+            font-size: 15px;
+            padding: 10px 3px 2px 0;
+        }
+    }
 }
