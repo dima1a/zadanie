@@ -1,5 +1,4 @@
-[
-   {
+data = `[{
       "img":"http:\/\/lorempixel.com\/400\/800\/",
       "desc":"Duis ac arcu vitae diam elementum suscipit.",
       "price":"\u20ac189.00"
@@ -59,4 +58,4 @@
       "desc":"Suspendisse fermentum libero sed lorem pellentesque, eget rhoncus ligula placerat.",
       "price":"\u20ac169.00"
    }
-]
+]`
